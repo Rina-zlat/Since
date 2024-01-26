@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="interval_time_script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Закон Стокса</title>
+</head>
+
+<body>
+
+    <header>
+        <center>
+            <h1>Движение тела в вязкой среде. Закон Стокса</h1>
+        </center>
+    </header>
+
+    <main>
+        <div id="space">
+        <aside class="menu">
+            <h2>Среда</h2>
+            <div><input id="area1" name="area" type="radio" checked onchange="area1_checked()">
+            <label for="area1">Тяжелая жидкость</label></div> <br>
+            <select id="select1" size="1" onchange="select_change()">
+                <option id="1" value="liquid3" selected>Масло касторовое 10 C</option>
+                <option id="2" value="liquid4">Глицерин 20 С</option>
+            </select>
+            <br>
+            <br>
+
+            <div><input id="area2" name="area" type="radio" onchange="area2_checked()">
+            <label for="area2">Легкая жидкость</label></div> <br>
+            <select id="select2" size="1" onchange="select_change()">
+                <option id="1" value="liquid1" selected>Ацетон</option>
+                <option id="2" value="liquid2">Вода</option>
+            </select>
+
+            <h2>Тело (железо):</h2>
+            <p>
+            Плотность: 7,8 г/см <sup><small>3</small></sup>
+            </p>
+            <p id="radiusss">
+            Радиус (см):
+            </p>
+            <p>Масса, гр:</p>
+            <!-- <label for="weigth">
+                </label> <br> -->
+
+            <div class="slidecontainer">
+                <input type="range" min="200" max="800" step="50" class="slider" id="myRange">
+                <p>Масса: <span id="demo"></span></p>
+            </div>
+
+            <script>
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = slider.value;
+
+                slider.oninput = function () {
+                    output.innerHTML = this.value;
+                }
+            </script>
+            <h2>Секундомер:</h2>
+
+            <div class="block_row timer_types ">
+                <span class="timer_types_btn active" id="Secret"> Время, с.
+                </span>
+            </div>
+
+            <p id='timer'>00:00.000</p>
+
+            <input value='Стоп' type='button' onclick='StopButtonPress()'>
+            <input value='Старт' type='button' onclick='StartButtonPress()'>
+        </aside>
+        
+            <div id="Photo">
+                <img id="crcl" src="./img/circle.svg" alt="circle">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%BA%D0%BE%D0%BD_%D0%A1%D1%82%D0%BE%D0%BA%D1%81%D0%B0">Закон Стокса</a>
+        <img src="./img/wiki.png" alt="wiki"> -->
+    </footer>
+</body>
+
+<script>
+    //document.getElementById('select1').click();
+    //document.getElementById('select1').ariaChecked = true;
+    document.getElementById('select2').hidden = true;
+    document.getElementById('crcl').style.paddingTop = min_padding;
+    console.log('hyi! ' + min_padding);
+</script>
+
+</html>
