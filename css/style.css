@@ -26,7 +26,7 @@ main {
 }
 
 #Photo{
-  background-image: url('./../img/colba.jpg');
+  background-image: url('./../img/colba.png');
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 750px;
